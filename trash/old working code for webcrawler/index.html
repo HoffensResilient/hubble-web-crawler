@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block title %}Web Crawler{% endblock %}
+
+{% block content %}
+<!-- Welcome Banner Starts Here -->
+<div class="banner-txt banner">
+  <h2>"Attention: Still in built mode"</h2>
+  <h2>"Provide us with your input"</h2>
+  <p>Enter your search url and search query in the box below:</p>
+</div>
+<br>
+
+<section class="web-search">
+  <form action="{{ url_for('search') }}" method="post">
+    <div class="input-container">
+      <h3 class="head1">Search URL</h3>
+      <input
+        type="search"
+        name="search_url"
+        placeholder="Enter your search url..."
+        required
+      />
+    </div>
+    <div class="input-container">
+      <h3 class="head2">Search Query</h3>
+      <input
+        type="search"
+        name="search_query"
+        placeholder="Enter your search query..."
+        required
+      />
+    </div>
+    <br>
+    <input
+      type="submit"
+      name="submit"
+      value="Web Crawl"
+      class="btn btn-primary"
+    />
+  </form>
+</section>
+{% endblock %}

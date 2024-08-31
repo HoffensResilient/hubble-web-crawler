@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Web Crawler</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="icon" href="{{ url_for('static', filename='favicon.png') }}" type="image/x-icon">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/search-result.css') }}">
+
+</head>
+<body>
+    <header>
+        <h1>Web Crawler</h1>
+        <!-- <a href="{{ url_for('index') }}"><h1>Web Crawler</h1></a> -->
+        <div class="menu text-center">
+            <a href="{{ url_for('index') }}">Web Crawler</a>
+        </div>
+    </header>
+    <div class="boldline"></div>
+    <div class="banner-txt banner">
+        {% block banner %}{% endblock %}
+    </div>
+    
+        {% block content %}{% endblock %}
+        {% block search %}{% endblock %}
+    
+    <br><br>
+    <div class="bold-line"></div>
+    <section class="footer text-center">
+        Thanks for using WebCrawler
+    </section>
+</body>
+</html>

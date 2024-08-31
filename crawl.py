@@ -1,10 +1,8 @@
-
 import os
 import requests
 from bs4 import BeautifulSoup
 import csv
 import sys
-
 
 def get_all_urls(base_url):
     try:
@@ -15,45 +13,42 @@ def get_all_urls(base_url):
         return []
 
     soup = BeautifulSoup(response.content, 'html.parser')
-
-    # Find all anchor tags (links) on the page
     links = soup.find_all('a')
+    urls_titles = [(link.get('href'), link.get_text()) for link in links if link.get('href')]
 
-    # Extract the URLs and titles from the links
-    urls_titles = [(link.get('href'), link.get_text()) for link in links]
-
-    # Filter out None and empty URLs
-    urls_titles = [(url, title)
-                   for url, title in urls_titles if url and not url.startswith('#')]
-
+    urls_titles = [(url, title) for url, title in urls_titles if url and not url.startswith('#')]
     return urls_titles
 
-
-if __name__ == "__main__":
-    if len(sys.argv) < 2:
-        print("Please provide the URL of the website to crawl as a command-line argument.")
-        sys.exit(1)
-
-    website_url = sys.argv[1]
+def crawl_website(website_url):
     urls_titles = get_all_urls(website_url)
-
     if urls_titles:
-        print("\nWebpages in the website:")
-        for i, (url, title) in enumerate(urls_titles, 1):
-            print(f"{i}. URL: {url}")
-            print(f"Title: {title}\n")
-
-        # Create the 'datas' folder if it doesn't exist
         data_folder = 'datas'
         if not os.path.exists(data_folder):
             os.makedirs(data_folder)
 
         csv_filepath = os.path.join(data_folder, 'webpages.csv')
-        with open(csv_filepath, 'w', newline='', encoding='utf-8') as file:
-            writer = csv.writer(file)
-            writer.writerow(['URL', 'Title'])
-            writer.writerows(urls_titles)
+        try:
+            with open(csv_filepath, 'w', newline='', encoding='utf-8') as file:
+                writer = csv.writer(file)
+                writer.writerow(['URL', 'Title'])
+                writer.writerows(urls_titles)
 
-        print(f"\nData saved to '{csv_filepath}' inside the 'datas' folder.")
+            print(f"Data saved to '{csv_filepath}' inside the 'datas' folder.")
+            return csv_filepath
+        except PermissionError:
+            print(f"Permission denied: '{csv_filepath}'. Ensure the file is not open elsewhere and you have write permissions.")
+            return None
+        except Exception as e:
+            print(f"An unexpected error occurred: {e}")
+            return None
     else:
         print("No webpages found on the website.")
+        return None
+
+if __name__ == "__main__":
+    if len(sys.argv) < 2:
+        print("Usage: python crawl.py <website_url>")
+        sys.exit(1)
+
+    website_url = sys.argv[1]
+    crawl_website(website_url)

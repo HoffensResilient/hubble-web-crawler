@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block banner %}
+    <h2>"Presenting the Search Results"</h2>
+{% endblock %}
+
+{% block search %}
+    {% if error %}
+        <p>{{ error }}</p>
+    {% else %}
+    
+        <div id="search-results" class="search-results">
+            <h3>Search Results</h3>
+            <br />
+            {% for url, title in results %}
+                <div class="search-display">
+                    <h4>{{ loop.index }}. {{ title }}</h4>
+                    <a href="{{ url }}" target="_blank">{{ url }}</a>
+                    <p>{{ title }}</p>
+                </div>
+            {% endfor %}
+        </div>
+        <br>
+        <div class="download">
+          <a href="{{ url_for('download_csv') }}" class="btn btn-primary">Download Full Crawled Data</a>
+          <a href="{{ url_for('download_search_results') }}" class="btn btn-primary">Download Search Results</a>
+        </div>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,144 @@
+* {
+  margin: 0 0;
+  padding: 0 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+  display: block;
+  width: fit-content;
+  background-color: rgb(212, 150, 70);
+  padding: 10px 20px;
+  border-radius: 10px;
+  text-align: center;
+  margin: 10px auto;
+  color: #ffffff;
+}
+
+.menu a {
+  font-weight: bold;
+  color: rgb(212, 150, 70);
+  margin: 20px;
+  text-decoration: none;
+}
+.menu a:hover {
+  color: rgb(147, 84, 2);
+}
+
+.text-center {
+  text-align: center;
+  margin-top: 10px;
+  color: rgb(147, 84, 2);
+}
+/* Bold line Section */
+.bold-line {
+  position: relative;
+  margin: 1% 5%;
+  height: 3px;
+  background-color: rgb(212, 150, 70);
+}
+
+.bold-line::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(212, 150, 70);
+}
+.boldline {
+  position: relative;
+  margin: 1% 32%;
+  height: 3px;
+  background-color: rgb(212, 150, 70);
+}
+
+.boldline::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(212, 150, 70);
+}
+
+.banner-txt {
+  text-align: center;
+  color: rgb(212, 150, 70);
+  padding-top: 1px;
+}
+.banner-txt p {
+  font-style: italic;
+  font-weight: bold;
+  font-family: "Times New Roman", Times, serif;
+}
+
+/* CSS for Product Showcase */
+h2 {
+  color: rgb(212, 150, 70);
+  font-size: 2rem;
+  margin-bottom: 2%;
+}
+.footer {
+  color: rgb(212, 150, 70);
+  font-weight: bold;
+}
+
+/* webcrawler part only css */
+
+.web-search {
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* align-items: center;  */
+}
+
+
+.web-search input[type="search"] {
+  width: 30%;
+  color: rgb(212, 150, 70);
+  padding: 1%;
+  font-size: 1rem;
+  border: 1px solid rgb(212, 150, 70);
+  border-radius: 100px;
+  justify-content: center;
+}
+
+.input-container h3 {
+  display: inline-block;
+  color: rgb(212, 150, 70);
+
+  margin-right: 10px;
+  margin-bottom: 5px;
+}
+.input-container input {
+  display: inline-block;
+  margin-bottom: 5px;
+}
+
+::placeholder {
+  color: burlywood;
+}
+
+/* Search button CSS  */
+.web-search {
+  margin-top: 5px;
+  text-align: center;
+}
+.btn {
+  padding: 1%;
+  border: none;
+  font-size: 1rem;
+  border-radius: 100px;
+  text-align: center;
+}
+.btn-primary {
+  background-color: burlywood;
+  color: white;
+  cursor: pointer;
+}
+.btn-primary:hover {
+  color: white;
+  background-color: rgb(147, 84, 2);
+}
