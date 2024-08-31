@@ -3,6 +3,7 @@ import requests
 from bs4 import BeautifulSoup
 import csv
 import sys
+from urllib.parse import urljoin
 
 def get_all_urls(base_url):
     try:
@@ -14,9 +15,10 @@ def get_all_urls(base_url):
 
     soup = BeautifulSoup(response.content, 'html.parser')
     links = soup.find_all('a')
-    urls_titles = [(link.get('href'), link.get_text()) for link in links if link.get('href')]
 
-    urls_titles = [(url, title) for url, title in urls_titles if url and not url.startswith('#')]
+    # Join relative URLs with the base URL
+    urls_titles = [(urljoin(base_url, link.get('href')), link.get_text().strip()) for link in links if link.get('href')]
+
     return urls_titles
 
 def crawl_website(website_url):

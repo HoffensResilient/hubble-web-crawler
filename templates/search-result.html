@@ -6,7 +6,9 @@
 
 {% block search %}
     {% if error %}
-        <p>{{ error }}</p>
+        <div class="text-center">
+            <p>{{ error }}</p>
+        </div>
     {% else %}
     
         <div id="search-results" class="search-results">
