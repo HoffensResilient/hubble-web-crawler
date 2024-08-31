@@ -1,34 +1,66 @@
 # Web Crawler
 
+## Overview
+
+The **Web Crawler** is a tool designed to extract URLs and titles from webpages. This utility can be run via the command line and provides functionality to search and retrieve data from specified URLs.
+
 ## Latest Update
 
-The web crawler is now accessible via a web browser! Please note that it may take up to 50 seconds to activate once you visit the URL. 
+The web crawler is now accessible via a web browser! Please allow up to 50 seconds for the activation of the crawler once you visit the URL.
 
-**Hosted URL:** 
+**Hosted URL:** [Insert your hosted URL here]
 
 ## How to Run the Web Crawler
 
-This web crawler extracts URLs and titles from webpages.
+Follow these steps to set up and run the web crawler:
 
 ### Setup
 
 1. **Create a Directory**  
-   Ensure that you have a folder named `datas` in the same directory as `input.py`.
+   Ensure you have a directory named `datas` in the same location as the `input.py` script. This directory is used to store the data collected by the crawler.
 
 2. **Install Dependencies**  
-   Make sure you have Python installed. Then, install the required packages by running:
+   Ensure Python is installed on your system. Install the necessary packages by running:
 
    ```sh
    pip install requests beautifulsoup4
    ```
 
 3. **Run the Crawler**  
-   Execute the crawler script with:
+   Execute the `input.py` script with the following command:
 
    ```sh
    python input.py
    ```
 
-   Follow the prompts to input the URL and search query.
+   Follow the prompts to input the URL and search query. The script will then perform the crawling and search operations, and output the results.
 
-Thank you for using the Web Crawler! If you encounter any issues or have questions, feel free to open an issue or contact me.
+## Usage
+
+- **Input**: Provide a URL and search query when prompted.
+- **Output**: The crawler extracts URLs and titles from the specified webpage and stores the results in CSV files.
+
+## Troubleshooting
+
+If you encounter issues or need further assistance:
+
+- **Check Dependencies**: Ensure all required packages are installed correctly.
+- **Verify Directory Structure**: Confirm that the `datas` directory exists and is correctly named.
+- **Review Logs**: Check for error messages or logs generated during execution for more details.
+
+## Contributing
+
+Contributions are welcome! To contribute:
+
+1. Fork the repository.
+2. Create a new branch for your feature or fix.
+3. Commit your changes with clear messages.
+4. Push your branch and submit a pull request.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE). See the LICENSE file for more details.
+
+## Contact
+
+For questions or feedback, please open an issue on GitHub or contact [rohitrajsarrafnp@gmail.com](mailto:rohitrajsarrafnp@gmail.com).
