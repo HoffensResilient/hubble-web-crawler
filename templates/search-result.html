@@ -10,9 +10,17 @@
             <p>{{ error }}</p>
         </div>
     {% else %}
-    
+    <div class="back">
+        <a href="{{ url_for('index') }}">
+            <button>
+                Back to Home
+            </button>
+        </a>
+    </div>
         <div id="search-results" class="search-results">
+            
             <h3>Search Results</h3>
+            
             <br />
             {% for url, title in results %}
                 <div class="search-display">
