@@ -8,7 +8,7 @@ The **Web Crawler** is a tool designed to extract URLs and titles from webpages.
 
 The web crawler is now accessible via a web browser! Please allow up to 50 seconds for the activation of the crawler once you visit the URL.
 
-**Hosted URL:** [Insert your hosted URL here]
+**Hosted URL:** [[Hubble Web Crawler](https://hubblewebcrawler.onrender.com/)]
 
 ## How to Run the Web Crawler
 
